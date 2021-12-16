@@ -61,13 +61,18 @@ function ForumPage() {
         <Box display="flex" alignItems="center">
           <ArrowBack
             onClick={() => history.push("/")}
-            sx={{ cursor: "pointer", margin: "0 10px 0 0" }}
+            sx={{
+              cursor: "pointer",
+              margin: "0 10px 0 0",
+              fontSize: matches ? "1.25rem" : "1.45rem",
+            }}
           />
           {forum?.title}
         </Box>
 
         <Share
           sx={{
+            margin: matches ? "0 6px 0 0" : "0",
             cursor: "pointer",
             color: lightDarkBgColor,
             fontSize: "1.2rem",

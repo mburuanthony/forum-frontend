@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Box, TextField, Button } from "@mui/material";
+import { Box, TextField, Button, useMediaQuery } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 import { AuthLogin } from "../../Redux/Actions/auth";
@@ -37,10 +37,12 @@ function Login() {
     }
   }, [loginError, setSnackBarOpen, setSnackBarMessage, history, authToken]);
 
+  const matches = useMediaQuery("(max-width:670px)");
+
   return (
     <Box
       sx={{
-        width: "22rem",
+        width: matches ? "20rem" : "22rem",
         margin: "0 auto",
         display: "flex",
         flexDirection: "column",

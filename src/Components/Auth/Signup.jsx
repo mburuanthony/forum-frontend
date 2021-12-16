@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
-import { Box, TextField, Button } from "@mui/material";
+import { Box, TextField, Button, useMediaQuery } from "@mui/material";
 import { AuthSignup } from "../../Redux/Actions/auth";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import { useSnackBar } from "../../Context/snackbarContext";
@@ -54,10 +54,12 @@ function Signup() {
     }
   }, [signupError, setSnackBarOpen, setSnackBarMessage, history, authToken]);
 
+  const matches = useMediaQuery("(max-width:670px)");
+
   return (
     <Box
       sx={{
-        width: "22rem",
+        width: matches ? "20rem" : "22rem",
         margin: "0 auto",
         display: "flex",
         flexDirection: "column",

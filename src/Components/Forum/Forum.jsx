@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 import { Link, useHistory } from "react-router-dom";
 import { formatDistanceToNow } from "date-fns";
 import { colors } from "../../Styles/colors";
@@ -30,6 +30,8 @@ function Forum(props) {
     }, 3500);
   };
 
+  const matches = useMediaQuery("(max-width:670px)");
+
   const {
     primary,
     boxShadowColor,
@@ -41,8 +43,7 @@ function Forum(props) {
 
   return (
     <Box
-      width="100%"
-      minWidth="20rem"
+      width={matches ? "22rem" : "100%"}
       margin="10px 0"
       style={{
         padding: "2px 4px 2px 0",
