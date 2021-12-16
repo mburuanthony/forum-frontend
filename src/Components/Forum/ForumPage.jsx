@@ -32,7 +32,9 @@ function ForumPage() {
 
   const { setSnackBarOpen, setSnackBarMessage } = useSnackBar();
   const copyLink = () => {
-    navigator.clipboard.writeText(`http://localhost:3000${location.pathname}`);
+    navigator.clipboard.writeText(
+      `https://forum-frontend.netlify.app${location.pathname}`
+    );
     setSnackBarOpen(true);
     setSnackBarMessage("Link copied to clipboard");
   };
